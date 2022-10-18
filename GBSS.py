@@ -24,7 +24,7 @@ dfgiziburuk = pd.read_csv("giziburuk.csv")
 dfgiziburuk.drop(['id','kode_provinsi','nama_provinsi','bps_kode_kabupaten_kota','bps_kode_kecamatan','bps_kode_desa_kelurahan','kemendagri_kode_kecamatan','kemendagri_kode_desa_kelurahan','satuan'],axis=1,inplace=True)
 dfgbfilters = dfgiziburuk[dfgiziburuk['bps_nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
 
-dfproduksisususapi = pd.read_csv("susu.csv")
+dfproduksisususapi = pd.read_csv("produksisususapi.csv")
 dfproduksisususapi.drop(['id','kode_provinsi','nama_provinsi','kode_kabupaten_kota'],axis=1,inplace=True)
 dfpsfilters = dfproduksisususapi[dfproduksisususapi['nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
 
@@ -46,10 +46,10 @@ option = st.sidebar.selectbox(
 
 if option == 'Home' or option == '':
     st.write("""# Halaman Utama""") #menampilkan halaman utama 
-    st.header("Latar Belakang")
+
     st.write("Gizi buruk atau malnutrisi adalah kondisi serius yang terjadi ketika asupan makanan seseorang tidak sesuai dengan jumlah nutrisi yang dibutuhkan. Nutrisi yang didapat bisa terlalu sedikit atau terlalu banyak. Kondisi ini dapat menyebabkan banyak masalah kesehatan seperti ditandai dengan berat badan dan tinggi badan tidak sesuai umur atau dibawah rata-rata (stunting), gangguan mata, diabetes, dan penyakit jantung")
-    st.write("Dari berita yang dimuat pada website suara.com, 7 juta anak Indonesia alami kurang gizi akibat adanya pandemi covid-19.")
-    st.write("Salah satu upaya yang dilakukan Kabupaten Subang dalam mengatasi permasalahan gizi adalah dengan program peningkatan konsumsi susu dalam kehidupan sehari-hari.")
+    st.write("Salah satu upaya yang dilakukan Kabupaten Subang dalam mengatasi permasalahan gizi adalah dengan program peningkatan konsumsi susu dalam kehidupan sehari-hari. ")
+
 elif option == 'Dataframe':
     st.write("""## Dataframe""") #menampilkan judul halaman dataframe
     #membuat dataframe dengan pandas yang terdiri dari 2 kolom dan 4 baris data 
@@ -67,7 +67,7 @@ elif option == 'Dataframe':
     st.dataframe(dfgbfilters) #menampilkan dataframe
 
     #membuat dataframe dengan pandas yang terdiri dari 2 kolom dan 4 baris data
-    dfproduksisususapi = pd.read_csv("susu.csv")
+    dfproduksisususapi = pd.read_csv("produksisususapi.csv")
     dfproduksisususapi.drop(['id','kode_provinsi','nama_provinsi','kode_kabupaten_kota'],axis=1,inplace=True)
     # st.write("Data Frame")
     # st.dataframe(dfproduksisususapi)
