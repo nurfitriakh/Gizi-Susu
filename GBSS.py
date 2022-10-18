@@ -27,8 +27,7 @@ dfgbfilters = dfgiziburuk[dfgiziburuk['bps_nama_kabupaten_kota'] == 'KABUPATEN S
 dfproduksisususapi = pd.read_csv("susu.csv")
 dfproduksisususapi.drop(['id','kode_provinsi','nama_provinsi','kode_kabupaten_kota'],axis=1,inplace=True)
 dfpsfilters = dfproduksisususapi[dfproduksisususapi['nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
-dfpsfilter1 = dfpsfilters.query('tahun >= 2019')
-dfpsfilter1
+
 st.set_page_config(layout="wide")
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
@@ -76,6 +75,9 @@ elif option == 'Dataframe':
     st.write("Data Frame Filter Subang")
     dfpsfilters = dfproduksisususapi.query ('nama_kabupaten_kota == "KABUPATEN SUBANG" & tahun == "2019"')
     st.dataframe(dfpsfilters) #menampilkan dataframe
+
+    dfpsfilter1 = dfpsfilters.query('tahun >= 2019')
+    dfpsfilter1
 
 elif option =='Chart':
     
