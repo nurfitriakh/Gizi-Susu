@@ -46,8 +46,9 @@ option = st.sidebar.selectbox(
 
 if option == 'Home' or option == '':
     st.write("""# Halaman Utama""") #menampilkan halaman utama 
-
+    st.header("Latar Belakang")
     st.write("Gizi buruk atau malnutrisi adalah kondisi serius yang terjadi ketika asupan makanan seseorang tidak sesuai dengan jumlah nutrisi yang dibutuhkan. Nutrisi yang didapat bisa terlalu sedikit atau terlalu banyak. Kondisi ini dapat menyebabkan banyak masalah kesehatan seperti ditandai dengan berat badan dan tinggi badan tidak sesuai umur atau dibawah rata-rata (stunting), gangguan mata, diabetes, dan penyakit jantung")
+    st.write("Dari berita yang dimuat pada website suara.com tanggal 4 Agustus 2022, 7 juta anak Indonesia alami kekurangan gizi akibat dari adanya pandemi covid-19 Diperkirakan akibat kondisi pandemi setelah dua tahun ini, menyebabkan peningkatan jumlah bayi kurus menjadi 15 persen")
     st.write("Salah satu upaya yang dilakukan Kabupaten Subang dalam mengatasi permasalahan gizi adalah dengan program peningkatan konsumsi susu dalam kehidupan sehari-hari. ")
 
 elif option == 'Dataframe':
