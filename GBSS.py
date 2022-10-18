@@ -24,7 +24,7 @@ dfgiziburuk = pd.read_csv("giziburuk.csv")
 dfgiziburuk.drop(['id','kode_provinsi','nama_provinsi','bps_kode_kabupaten_kota','bps_kode_kecamatan','bps_kode_desa_kelurahan','kemendagri_kode_kecamatan','kemendagri_kode_desa_kelurahan','satuan'],axis=1,inplace=True)
 dfgbfilters = dfgiziburuk[dfgiziburuk['bps_nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
 
-dfproduksisususapi = pd.read_csv("susu.csv")
+dfproduksisususapi = pd.read_csv("produksisususapi.csv")
 dfproduksisususapi.drop(['id','kode_provinsi','nama_provinsi','kode_kabupaten_kota'],axis=1,inplace=True)
 dfpsfilters = dfproduksisususapi[dfproduksisususapi['nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
 
@@ -67,17 +67,15 @@ elif option == 'Dataframe':
     st.dataframe(dfgbfilters) #menampilkan dataframe
 
     #membuat dataframe dengan pandas yang terdiri dari 2 kolom dan 4 baris data
-    dfproduksisususapi = pd.read_csv("susu.csv")
+    dfproduksisususapi = pd.read_csv("produksisususapi.csv")
     dfproduksisususapi.drop(['id','kode_provinsi','nama_provinsi','kode_kabupaten_kota'],axis=1,inplace=True)
     # st.write("Data Frame")
     # st.dataframe(dfproduksisususapi)
     #filter subang saja
     st.write("Data Frame Filter Subang")
-    dfpsfilters = dfproduksisususapi.query ('nama_kabupaten_kota == "KABUPATEN SUBANG" & tahun == "2019"')
-    st.dataframe(dfpsfilters) #menampilkan dataframe
-
-    dfpsfilter1 = dfpsfilters.query('tahun >= 2019')
-    dfpsfilter1
+    dfpsfilters = dfproduksisususapi.query ('nama_kabupaten_kota == "KABUPATEN SUBANG"')
+    dfpsfilter = dfpsfilters.query ('tahun >= 2019')
+    st.dataframe(dfpsfilter) #menampilkan dataframe
 
 elif option =='Chart':
     
