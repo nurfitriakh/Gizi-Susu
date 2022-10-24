@@ -36,7 +36,7 @@ st.write("Nurfitria Khoirunnisa")
 
 option = st.sidebar.selectbox(
      'Silakan pilih:',
-    ('Home','Dataframe','Chart')
+    ('Home','Dataframe','Chart','Rekomendasi')
 )
 
 # st.set_page_config(layout="wide")
@@ -49,7 +49,6 @@ if option == 'Home' or option == '':
     st.header("Latar Belakang")
     st.write("Gizi buruk atau malnutrisi adalah kondisi serius yang terjadi ketika asupan makanan seseorang tidak sesuai dengan jumlah nutrisi yang dibutuhkan. Nutrisi yang didapat bisa terlalu sedikit atau terlalu banyak. Kondisi ini dapat menyebabkan banyak masalah kesehatan seperti ditandai dengan berat badan dan tinggi badan tidak sesuai umur atau dibawah rata-rata (stunting), gangguan mata, diabetes, dan penyakit jantung")
     st.write("Dari berita yang dimuat pada website suara.com tanggal 4 Agustus 2022, 7 juta anak Indonesia alami kekurangan gizi akibat dari adanya pandemi covid-19. Kemenkes mencatat, kasus stunting saat ini masih ada 24,4 persen dari sebelumnya 30,8 persen pada 2018. Sementara target pemerintah pada 2024, angka stunting tersisa 14 persen. ")
-    st.write("Salah satu upaya yang dilakukan Kabupaten Subang dalam mengatasi permasalahan gizi adalah dengan program peningkatan konsumsi susu dalam kehidupan sehari-hari. ")
     st.header("Hipotesis")
     st.write("Akibat kondisi pandemi setelah dua tahun ini, menyebabkan peningkatan jumlah bayi kurus dan kurang gizi menjadi 15 persen.")
     st.header("Metode")
@@ -136,3 +135,7 @@ elif option =='Chart':
     columns=['lat', 'lon'])
     st.map(df)
 
+elif option =='Rekomendasi':
+    st.header("Rekomendasi")
+    st.write("Susu sapi mengandung gizi yang baik untuk pertumbuhan anak-anak. Susu sapi kaya akan vitamin dan mineral, seperti kalium, B12, kalsium, vitamin A, magenisum, seng, tiamin, dan Vitamin D. Semua vitamin dan mineral tersebut tentu menunjang kesehatan dan pertumbuhan anak")
+    st.write("Salah satu upaya yang bisa dilakukan Kabupaten Subang dalam mengatasi permasalahan gizi adalah dengan program peningkatan konsumsi susu dalam kehidupan sehari-hari.")
