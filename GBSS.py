@@ -94,7 +94,7 @@ elif option =='Chart':
     sns.set_style('whitegrid')
     sns.set_context('talk')
     params = {'legend.fontsize': 'x-large',
-            'figure.figsize': (50, 100),
+            'figure.figsize': (40, 75),
             'axes.labelsize': 'x-large',
             'axes.titlesize':'x-large',
             'xtick.labelsize':'x-large',
