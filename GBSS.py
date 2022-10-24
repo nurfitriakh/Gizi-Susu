@@ -68,6 +68,7 @@ elif option == 'Dataframe':
     #filter subang saja
     st.header("Data Frame Gizi Buruk di Subang")
     st.write("Berikut terlampir data kejadian gizi buruk di Kabupaten Subang. Data ini didapatkan dari data set kejadian Gizi Buruk di Provinsi Jawa Barat yang kemudian dilakukan filtering data khusus Kabupaten Subang saja")
+    st.write("Dari data yang ada, terlihat penambahan kasus kejadian di saat pandemi berlangsung")
     dfgbfilters = dfgiziburuk[dfgiziburuk['bps_nama_kabupaten_kota'] == 'KABUPATEN SUBANG']
     st.dataframe(dfgbfilters) #menampilkan dataframe
 
@@ -79,6 +80,8 @@ elif option == 'Dataframe':
     #filter subang saja
     st.header("Data Frame Produksi Susu Sapi di Subang")
     st.write("Berikut terlampir data produksi susu sapi di Kabupaten Subang. Data ini didapatkan dari data set Produksi Susu Sapi di Provinsi Jawa Barat yang kemudian dilakukan filtering data khusus Kabupaten Subang pada tahiun 2019 sampai dengan 2021 saja")
+    st.write("Dari data yang ada, terlihat peningkatan produksi susu di kabupaten subang setiap tahunnya. Namun disayangkan peningkatan produksi susu ini belum membantu penurunan kasus gizi buruk di Subang.")
+    
     dfpsfilters = dfproduksisususapi.query ('nama_kabupaten_kota == "KABUPATEN SUBANG"')
     dfpsfilter = dfpsfilters.query ('tahun >= 2019')
     st.dataframe(dfpsfilter) #menampilkan dataframe
